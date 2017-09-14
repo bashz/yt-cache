@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "cogitube",
+  "version": "0.0.1",
+  "description": "Caches your favorite youtube video for better bandwidth!",
+  "minimum_chrome_version": "26",
+  "browser_action": {
+    "default_title": "CogiTube",
+    "default_icon": {
+      "128": "images/icons/Cogite_128.png",
+      "64": "images/icons/Cogite_64.png",
+      "32": "images/icons/Cogite_32.png",
+      "16": "images/icons/Cogite_16.png"
+    }
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "https://*.youtube.com/*",
+    "http://*.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": ["https://*.youtube.com/watch*", "http://*.youtube.com/watch*"],
+      "js": ["js/alterSource.js"]
+    }
+  ],
+  "icons": {
+    "128": "images/icons/Cogite_128.png",
+    "64": "images/icons/Cogite_64.png",
+    "32": "images/icons/Cogite_32.png",
+    "16": "images/icons/Cogite_16.png"
+  }
+}
