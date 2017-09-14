@@ -1,0 +1,9 @@
+# actual videos
+public/videos
+!public/video/.gitkeep
+
+# npm
+node_modules/
+
+# ide
+nbproject/
